@@ -31,3 +31,14 @@ I also use `lightDM` as my display manager.
     - zsh
     - radeontop
     - lsd
+
+
+<img src="./res/kde/SS_08.01.2022_14:59:43.png"/>
+<img src="./res/kde/SS_08.01.2022_15:03:37.png"/>
+
+<img src="./res/sway/ps_20220108161114.png"/>
+<img src="./res/sway/ps_20220108161804.png"/>
+<img src="./res/sway/ps_20220108162217.png"/>
+<img src="./res/sway/ps_20220108162719.png"/>
+<img src="./res/sway/ps_20220108165034.png"/>
+<img src="./res/sway/ps_20220108165248.png"/>
