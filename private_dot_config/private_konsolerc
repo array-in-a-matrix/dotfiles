@@ -1,0 +1,30 @@
+[Desktop Entry]
+DefaultProfile=KDE.profile
+
+[KonsoleWindow]
+AllowMenuAccelerators=true
+SaveGeometryOnExit=false
+ShowMenuBarByDefault=false
+ShowWindowTitleOnTitleBar=true
+
+[MainWindow]
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAAAAA7wAAAQBAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAIAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAAAAAAHABzAGUAcwBzAGkAbwBuAFQAbwBvAGwAYgBhAHIAAAAAAP////8AAAAAAAAAAA==
+StatusBar=Disabled
+ToolBarsMovable=Disabled
+eDP XPosition 1920x1080=56
+eDP YPosition 1920x1080=703
+
+[Notification Messages]
+CloseAllTabs=true
+CloseSingleTab=true
+
+[Open-with settings]
+CompletionMode=1
+History=fire
+
+[TabBar]
+CloseTabOnMiddleMouseButton=true
+
+[ThumbnailsSettings]
+ThumbnailAlt=true

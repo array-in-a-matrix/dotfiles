@@ -1,0 +1,65 @@
+# If using i3 then use pywal and pywalfox
+if [[ $XDG_SESSION_DESKTOP == "sway" ]]; then 
+cat ~/.cache/wal/sequences
+fi
+
+# Lines configured by zsh-newuser-install
+HISTFILE="$XDG_CONFIG_HOME/zsh/histfile"
+HISTSIZE=1000
+SAVEHIST=10000
+setopt autocd
+unsetopt beep
+bindkey -v
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename "$XDG_CONFIG_HOME/zsh/.zshrc"
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+ZSH_THEME="agnoster"
+
+plugins=(
+# git
+# zsh-autosuggestions
+archlinux
+emoji
+zsh-syntax-highlighting
+)
+
+newtheme(){
+sh $XDG_CONFIG_HOME/sway/colors.sh
+}
+
+source "$XDG_CONFIG_HOME/zsh/icons"
+source "$ZSH/oh-my-zsh.sh"
+
+# Example aliases
+alias py="python3"
+alias projects="$HOME/Documents/Projects/"
+alias config="cd $XDG_CONFIG_HOME"
+alias upgrade="sudo aura -Syu && sudo aura -Akuax"
+alias micon="pactl load-module module-loopback latency_msec=1"
+alias micoff="pactl unload-module module-loopback"
+alias vim="nvim"
+alias ls="lsd"
+
+# . torsocks on
+
+if [[ -n $(tty | grep tty) ]]; then 
+    source ~/.cache/wal/colors-tty.sh
+    unimatrix -w -s 95
+fi
+
+lfcd() {
+    tmp="$(mktemp)"
+    lfrun -last-dir-path="$tmp" "$@"
+    if [ -f "$tmp" ]; then
+        dir="$(cat "$tmp")"
+        rm -f "$tmp"
+        [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
+    fi
+}
+bindkey -s '^o' 'lfcd\n'
+
