@@ -19,7 +19,6 @@ I also use `lightDM` as my display manager.
 ## Other Apps
     - pywal
     - unimatrix
-    - pywal
     - pipes.sh
     - pfetch
     - gotop
@@ -29,11 +28,11 @@ I also use `lightDM` as my display manager.
     - firefox
     - vscode
     - zsh
+    - Oh-My-Zsh
     - radeontop
     - lsd
 
-## Sway
-
+## SwayWM
 <img src="./res/sway/ps_20220108161114.png"/>
 <img src="./res/sway/ps_20220108161804.png"/>
 <img src="./res/sway/ps_20220108162217.png"/>
@@ -44,6 +43,7 @@ I also use `lightDM` as my display manager.
 <br> 
 
 ## KDE
-
+<img src="./res/kde/SS_08.01.2022_18:31:31.png"/>
+<img src="./res/kde/SS_08.01.2022_17:57:29.png"/>
 <img src="./res/kde/SS_08.01.2022_14:59:43.png"/>
 <img src="./res/kde/SS_08.01.2022_15:03:37.png"/>
