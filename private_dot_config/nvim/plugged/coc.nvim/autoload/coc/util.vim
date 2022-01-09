@@ -3,7 +3,7 @@ let s:root = expand('<sfile>:h:h:h')
 let s:is_win = has('win32') || has('win64')
 let s:is_vim = !has('nvim')
 let s:clear_match_by_id = has('nvim-0.5.0') || has('patch-8.1.1084')
-let s:vim_api_version = 10
+let s:vim_api_version = 11
 let s:activate = ""
 let s:quit = ""
 
@@ -159,6 +159,15 @@ function! coc#util#jump(cmd, filepath, ...) abort
     let extra = empty(get(a:, 1, [])) ? '' : '+'.(a:1[0] + 1)
     exe 'pedit '.extra.' '.fnameescape(file)
     return
+  elseif a:cmd == 'drop' && exists('*bufadd')
+    let dstbuf = bufadd(path)
+    let binfo = getbufinfo(dstbuf)
+    if len(binfo) == 1 && empty(binfo[0].windows)
+      exec 'buffer '.dstbuf
+      let &buflisted = 1
+    else
+      exec 'drop '.fnameescape(file)
+    endif
   else
     exe a:cmd.' '.fnameescape(file)
   endif
@@ -351,6 +360,7 @@ function! coc#util#get_complete_option()
         \ 'synname': synname,
         \ 'changedtick': b:changedtick,
         \ 'blacklist': get(b:, 'coc_suggest_blacklist', []),
+        \ 'indentkeys': coc#util#get_indentkeys()
         \}
 endfunction
 
@@ -442,6 +452,9 @@ function! coc#util#open_terminal(opts) abort
   setl norelativenumber
   setl nonumber
   setl bufhidden=wipe
+  if exists('#User#CocTerminalOpen')
+    exe 'doautocmd <nomodeline> User CocTerminalOpen'
+  endif
   let cmd = get(a:opts, 'cmd', '')
   let autoclose = get(a:opts, 'autoclose', 1)
   if empty(cmd)
@@ -529,7 +542,7 @@ function! coc#util#vim_info()
         \ 'colorscheme': get(g:, 'colors_name', ''),
         \ 'workspaceFolders': get(g:, 'WorkspaceFolders', v:null),
         \ 'background': &background,
-        \ 'runtimepath': &runtimepath,
+        \ 'runtimepath': join(globpath(&runtimepath, '', 0, 1), ','),
         \ 'locationlist': get(g:,'coc_enable_locationlist', 1),
         \ 'progpath': v:progpath,
         \ 'guicursor': &guicursor,
@@ -546,7 +559,7 @@ function! coc#util#highlight_options()
   return {
         \ 'colorscheme': get(g:, 'colors_name', ''),
         \ 'background': &background,
-        \ 'runtimepath': &runtimepath,
+        \ 'runtimepath': join(globpath(&runtimepath, '', 0, 1), ','),
         \}
 endfunction
 
@@ -873,4 +886,15 @@ function! coc#util#get_format_opts(bufnr) abort
   endif
   let tabsize = &shiftwidth == 0 ? &tabstop : &shiftwidth
   return [tabsize, &expandtab]
+endfunction
+
+" Get indentkeys for indent on TextChangedP, consider = for word indent only.
+function! coc#util#get_indentkeys() abort
+  if empty(&indentexpr)
+    return ''
+  endif
+  if &indentkeys !~# '='
+    return ''
+  endif
+  return &indentkeys
 endfunction

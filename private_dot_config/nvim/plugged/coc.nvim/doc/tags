@@ -103,6 +103,7 @@ CocAction('outgoingCalls')	coc.txt	/*CocAction('outgoingCalls')*
 CocAction('pickColor')	coc.txt	/*CocAction('pickColor')*
 CocAction('quickfixes')	coc.txt	/*CocAction('quickfixes')*
 CocAction('refactor')	coc.txt	/*CocAction('refactor')*
+CocAction('references')	coc.txt	/*CocAction('references')*
 CocAction('refreshSource')	coc.txt	/*CocAction('refreshSource')*
 CocAction('reloadExtension')	coc.txt	/*CocAction('reloadExtension')*
 CocAction('rename')	coc.txt	/*CocAction('rename')*
@@ -163,6 +164,7 @@ CocMenuSel	coc.txt	/*CocMenuSel*
 CocNotify()	coc.txt	/*CocNotify()*
 CocNvimInit	coc.txt	/*CocNvimInit*
 CocOpenFloat	coc.txt	/*CocOpenFloat*
+CocOpenFloatPrompt	coc.txt	/*CocOpenFloatPrompt*
 CocRegistNotification()	coc.txt	/*CocRegistNotification()*
 CocRequest()	coc.txt	/*CocRequest()*
 CocRequestAsync()	coc.txt	/*CocRequestAsync()*

@@ -149,7 +149,7 @@ function! s:funcs.feedkeys(keys, mode, escape_csi)
 endfunction
 
 function! s:funcs.list_runtime_paths()
-  return split(&runtimepath, ',')
+  return globpath(&runtimepath, '', 0, 1)
 endfunction
 
 function! s:funcs.command_output(cmd)
@@ -310,7 +310,7 @@ function! s:funcs.buf_clear_namespace(bufnr, srcId, startLine, endLine) abort
   endif
   let bufnr = a:bufnr == 0 ? bufnr('%') : a:bufnr
   let start = a:startLine + 1
-  let end = a:endLine == -1 ? len(getbufline(bufnr, 1, '$')) : a:endLine + 1
+  let end = a:endLine == -1 ? len(getbufline(bufnr, 1, '$')) : a:endLine
   if a:srcId == -1
     call prop_clear(start, end, {'bufnr' : bufnr})
   else
@@ -376,8 +376,14 @@ function! s:funcs.buf_set_lines(bufnr, start, end, strict, ...) abort
       if delCount
         let start = startLnum + len(replacement)
         let saved_reg = @"
-        silent execute start . ','.(start + delCount - 1).'d'
+        let system_reg = @*
+        if exists('*deletebufline')
+          silent call deletebufline(curr, start, start + delCount - 1)
+        else
+          silent execute start . ','.(start + delCount - 1).'d'
+        endif
         let @" = saved_reg
+        let @* = system_reg
       endif
     endif
     call winrestview(storeView)
@@ -396,8 +402,12 @@ function! s:funcs.buf_set_lines(bufnr, start, end, strict, ...) abort
       endif
       if delCount
         let start = startLnum + len(replacement)
+        let saved_reg = @"
+        let system_reg = @*
         "8.1.0039
         silent call deletebufline(a:bufnr, start, start + delCount - 1)
+        let @" = saved_reg
+        let @* = system_reg
       endif
     endif
   endif

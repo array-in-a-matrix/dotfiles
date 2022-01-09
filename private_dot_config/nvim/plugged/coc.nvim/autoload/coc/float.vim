@@ -284,7 +284,7 @@ function! coc#float#nvim_close_btn(config, winid, border, hlgroup, winblend, rel
         \ 'focusable': v:true,
         \ 'style': 'minimal',
         \ }
-  if has('nvim-0.5.0')
+  if has('nvim-0.5.1')
     let config['zindex'] = 300
   endif
   if winid
@@ -318,7 +318,7 @@ function! coc#float#nvim_right_pad(config, winid, hlgroup, winblend, related) ab
         \ 'focusable': v:false,
         \ 'style': 'minimal',
         \ }
-  if has('nvim-0.5.0')
+  if has('nvim-0.5.1')
     let config['zindex'] = 300
   endif
   if winid && nvim_win_is_valid(winid)
@@ -359,7 +359,7 @@ function! coc#float#nvim_buttons(config, winid, buttons, borderbottom, pad, hlgr
         \ 'focusable': 1,
         \ 'style': 'minimal',
         \ }
-  if has('nvim-0.5.0')
+  if has('nvim-0.5.1')
     let config['zindex'] = 300
     if a:shadow
       let config['border'] = 'shadow'
@@ -447,7 +447,7 @@ function! coc#float#nvim_scrollbar(winid) abort
         \ 'focusable': v:false,
         \ 'style': 'minimal',
         \ }
-  if has('nvim-0.5.0')
+  if has('nvim-0.5.1')
     let opts['zindex'] = 300
   endif
   if id
@@ -619,6 +619,7 @@ function! coc#float#create_prompt_win(title, default, opts) abort
     exe 'inoremap <silent><expr><nowait><buffer> <cr> "\<C-r>=coc#float#prompt_insert(getline(''.''))\<cr>\<esc>"'
     call feedkeys('A', 'in')
   endif
+  call coc#util#do_autocmd('CocOpenFloatPrompt')
   return [bufnr, winid]
 endfunction
 
@@ -1682,8 +1683,17 @@ endfunction
 " get popup position for vim8 based on config of neovim float window
 function! s:popup_position(config) abort
   let relative = get(a:config, 'relative', 'editor')
+  let border = get(a:config, 'border', [0, 0, 0, 0])
+  let delta = get(border, 0, 0)  + get(border, 2, 0)
   if relative ==# 'cursor'
-    return [s:popup_cursor(a:config['row']), s:popup_cursor(a:config['col'])]
+    if a:config['row'] < 0
+      let delta = - delta
+    elseif a:config['row'] == 0
+      let delta = - get(border, 0, 0)
+    else
+      let delta = 0
+    endif
+    return [s:popup_cursor(a:config['row'] + delta), s:popup_cursor(a:config['col'])]
   endif
   return [a:config['row'] + 1, a:config['col'] + 1]
 endfunction
