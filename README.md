@@ -1,10 +1,11 @@
 # Dotfiles
-
 I use 2 DE/WM on my Arch Linux system:
    - KDE/kwin
    - SwayWM/wlroots
 
 I also use `lightDM` as my display manager.
+
+Dotfiles managed using [chezmoi](https://www.chezmoi.io/).
 
 ## SwayWM
 - Terminal: `Alacritty`
@@ -16,7 +17,7 @@ I also use `lightDM` as my display manager.
 - Terminal: `Konsole`
 - File Manager: `Dolphin`
 
-## Other Apps
+### Other Apps
     - pywal
     - unimatrix
     - pipes.sh
@@ -31,7 +32,7 @@ I also use `lightDM` as my display manager.
     - Oh-My-Zsh
     - radeontop
     - lsd
-
+---
 ## SwayWM
 <img src="./res/sway/ps_20220108161114.png"/>
 <img src="./res/sway/ps_20220108161804.png"/>
@@ -39,8 +40,6 @@ I also use `lightDM` as my display manager.
 <img src="./res/sway/ps_20220108162719.png"/>
 <img src="./res/sway/ps_20220108165034.png"/>
 <img src="./res/sway/ps_20220108165248.png"/>
-
-<br> 
 
 ## KDE
 <img src="./res/kde/SS_08.01.2022_18:31:31.png"/>
