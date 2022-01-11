@@ -35,7 +35,8 @@ endif
 
 colorscheme wal
 
-let g:airline_theme='custom'
+" let g:airline_theme='custom'
+let g:airline_theme='transparent'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#whitespace#enabled = 0
 let t_Co=256

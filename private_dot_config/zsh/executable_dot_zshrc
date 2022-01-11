@@ -44,6 +44,7 @@ alias micon="pactl load-module module-loopback latency_msec=1"
 alias micoff="pactl unload-module module-loopback"
 alias vim="nvim"
 alias ls="lsd"
+alias rm="rm -i"
 
 # . torsocks on
 
