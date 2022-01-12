@@ -238,7 +238,7 @@ exec --no-startup-id exec bash /home/linux/.config/sway/colors.sh
 
 #brightness control with brightness fn keys
 bindsym XF86MonBrightnessUp exec brightnessctl -q set +5%
-bindsym XF86MonBrightnessDown exec brightnessctl -q set -5%
+bindsym XF86MonBrightnessDown exec brightnessctl -q set 5%-
 
 # use pactl to adjust volume
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% 
