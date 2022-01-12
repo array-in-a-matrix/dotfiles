@@ -216,12 +216,12 @@ bindsym $mod+r mode "resize"
 
 set $mode_system 1 lock, 2 logout, 3 suspend, 4 hibernate, 5 reboot, 6 shutdown
 mode "$mode_system" {
-    bindsym 1 exec --no-startup-id $XDG_CONFIG_HOME/sway/exit.sh lock, mode "default"
-    bindsym 2 exec --no-startup-id $XDG_CONFIG_HOME/sway/exit.sh logout, mode "default"
-    bindsym 3 exec --no-startup-id $XDG_CONFIG_HOME/sway/exit.sh suspend, mode "default"
-    bindsym 4 exec --no-startup-id $XDG_CONFIG_HOME/sway/exit.sh hibernate, mode "default"
-    bindsym 5 exec --no-startup-id $XDG_CONFIG_HOME/sway/exit.sh reboot, mode "default"
-    bindsym 6 exec --no-startup-id $XDG_CONFIG_HOME/sway/exit.sh shutdown, mode "default"
+    bindsym 1 exec --no-startup-id ~/.config/sway/exit.sh lock, mode "default"
+    bindsym 2 exec --no-startup-id ~/.config/sway/exit.sh logout, mode "default"
+    bindsym 3 exec --no-startup-id ~/.config/sway/exit.sh suspend, mode "default"
+    bindsym 4 exec --no-startup-id ~/.config/sway/exit.sh hibernate, mode "default"
+    bindsym 5 exec --no-startup-id ~/.config/sway/exit.sh reboot, mode "default"
+    bindsym 6 exec --no-startup-id ~/.config/sway/exit.sh shutdown, mode "default"
 
 # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -237,7 +237,7 @@ exec mako
 exec_always "killall waybar; waybar"
 
 #new theme
-exec --no-startup-id exec bash /home/linux/.config/sway/colors.sh
+exec --no-startup-id ~/.config/sway/colors.sh
 
 #brightness control with brightness fn keys
 bindsym XF86MonBrightnessUp exec brightnessctl -q set +5%
