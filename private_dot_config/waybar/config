@@ -69,7 +69,8 @@
         "interval": 1,
         "exec": "cmus-remote -C \"format_print '%a - %t'\"", 
         "exec-if": "pgrep cmus",
-        "on-click": "cmus-remote -u",                        
+        "on-click": "cmus-remote --pause",                        
+        "on-click-right": "cmus-remote --next",
         "escape": true                                       
     }
 }
