@@ -29,7 +29,17 @@ zsh-syntax-highlighting
 )
 
 newtheme(){
-sh $XDG_CONFIG_HOME/sway/colors.sh
+    sh $XDG_CONFIG_HOME/sway/colors.sh
+}
+
+mountdrives(){
+    echo "Making directories..."
+    sudo mkdir -p /run/media/linux/6E5273EB5273B685
+    sudo mkdir /run/media/linux/2E56677A56674227
+    echo "Mounting drives..."
+    sudo mount /dev/sda3 /run/media/linux/6E5273EB5273B685
+    sudo mount /dev/nvme0n1p2 /run/media/linux/2E56677A56674227
+    echo "Done."
 }
 
 source "$XDG_CONFIG_HOME/zsh/icons"
@@ -44,7 +54,8 @@ alias micon="pactl load-module module-loopback latency_msec=1"
 alias micoff="pactl unload-module module-loopback"
 alias vim="nvim"
 alias ls="lsd"
-alias rm="rm -i"
+alias rm="trash"
+alias radeontop="radeontop -c"
 
 # . torsocks on
 
