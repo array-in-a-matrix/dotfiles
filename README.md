@@ -23,6 +23,8 @@ Dotfiles managed using [chezmoi](https://www.chezmoi.io/).
     - pipes.sh
     - pfetch
     - gotop
+    - htop
+    - radeontop
     - cava
     - cmus
     - neovim
@@ -30,7 +32,6 @@ Dotfiles managed using [chezmoi](https://www.chezmoi.io/).
     - vscode
     - zsh
     - Oh-My-Zsh
-    - radeontop
     - lsd
 ---
 ## SwayWM
