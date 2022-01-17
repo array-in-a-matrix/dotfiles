@@ -1,9 +1,0 @@
-0000000000000000000000000000000000000000 03c9add7cd867a013102dcb45fb4e75304d227d7 linux <linux@archlinux.localdomain> 1632171242 -0400	clone: from https://github.com/neoclide/coc.nvim.git
-03c9add7cd867a013102dcb45fb4e75304d227d7 287c743c9f227fdf0e1db452bbb8ae3c5caffc36 linux <linux@archlinux.localdomain> 1632171242 -0400	checkout: moving from master to release
-287c743c9f227fdf0e1db452bbb8ae3c5caffc36 287c743c9f227fdf0e1db452bbb8ae3c5caffc36 array-in-a-matrix <nova.neutrino@protonmail.com> 1634528024 -0400	checkout: moving from release to release
-287c743c9f227fdf0e1db452bbb8ae3c5caffc36 287c743c9f227fdf0e1db452bbb8ae3c5caffc36 array-in-a-matrix <nova.neutrino@protonmail.com> 1634528044 -0400	checkout: moving from release to release
-287c743c9f227fdf0e1db452bbb8ae3c5caffc36 287c743c9f227fdf0e1db452bbb8ae3c5caffc36 linux <linux@archlinux.localdomain> 1636403107 -0500	checkout: moving from release to release
-287c743c9f227fdf0e1db452bbb8ae3c5caffc36 287c743c9f227fdf0e1db452bbb8ae3c5caffc36 linux <linux@archlinux.localdomain> 1636786427 -0500	checkout: moving from release to release
-287c743c9f227fdf0e1db452bbb8ae3c5caffc36 287c743c9f227fdf0e1db452bbb8ae3c5caffc36 linux <linux@archlinux.localdomain> 1636786624 -0500	checkout: moving from release to release
-287c743c9f227fdf0e1db452bbb8ae3c5caffc36 287c743c9f227fdf0e1db452bbb8ae3c5caffc36 array-in-a-matrix <nova.neutrino@protonmail.com> 1641690678 -0500	checkout: moving from release to release
-287c743c9f227fdf0e1db452bbb8ae3c5caffc36 28e7f0376bcb661afa9e3b8b352152b981f5eda3 array-in-a-matrix <nova.neutrino@protonmail.com> 1641690678 -0500	merge origin/release: Fast-forward

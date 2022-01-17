@@ -28,6 +28,10 @@ Dotfiles managed using [chezmoi](https://www.chezmoi.io/).
     - cava
     - cmus
     - neovim
+        - coc
+        - vim airline
+        - vim airline themes
+        - wal
     - firefox
     - vscode
     - zsh
