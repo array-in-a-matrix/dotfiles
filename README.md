@@ -19,6 +19,7 @@ Dotfiles managed using [chezmoi](https://www.chezmoi.io/).
 
 ### Other Apps
     - pywal
+    - pywalfox
     - unimatrix
     - pipes.sh
     - pfetch
