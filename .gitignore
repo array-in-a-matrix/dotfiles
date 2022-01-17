@@ -1,3 +1,3 @@
-*histfile*
-*zcompdump*
 *plugged*
+private_dot_config/zsh/*histfile*
+private_dot_config/zs/*zcompdump*
