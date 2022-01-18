@@ -29,18 +29,18 @@ window#waybar.hidden {
     opacity: 0.2;
 }
 
-* button {
+button {
     background-color: transparent;
     color: @color7;
     box-shadow: inset 0 -3px transparent;
 }
 
-* button:hover {
+button:hover {
     background: @color11;
     box-shadow: inset 0 -3px @color7;
 }
 
-* button.focused {
+button.focused {
     background-color: @color1;
     box-shadow: inset 0 -3px @color7;
 }

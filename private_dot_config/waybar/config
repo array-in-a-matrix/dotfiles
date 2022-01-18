@@ -5,7 +5,7 @@
 
     "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
     "modules-center": [],
-    "modules-right": ["custom/cmus", "idle_inhibitor", "network", "pulseaudio", "battery", "clock"],
+    "modules-right": ["custom/cmus", "idle_inhibitor", "network", "pulseaudio", "battery", "clock", "custom/themer"],
 
 
     "sway/workspaces": {
@@ -72,5 +72,11 @@
         "on-click": "cmus-remote --pause",                        
         "on-click-right": "cmus-remote --next",
         "escape": true                                       
+    },
+    "custom/themer": {
+        "format": "  ",
+        "interval": 1,
+        "on-click": "exec ~/.config/sway/colors.sh",
+        "on-click-right": "exec ~/.config/sway/colors.sh"
     }
 }
