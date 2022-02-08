@@ -231,7 +231,7 @@ mode "$mode_system" {
 bindsym $mod+Shift+e mode "$mode_system"
 
 #notification
-exec mako
+# exec mako
 
 #runs waybar
 exec_always "killall waybar; waybar"
