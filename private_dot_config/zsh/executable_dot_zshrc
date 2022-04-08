@@ -1,6 +1,10 @@
 # If using i3 then use pywal and pywalfox
 if [[ $XDG_SESSION_DESKTOP == "sway" ]]; then 
-cat ~/.cache/wal/sequences
+    cat ~/.cache/wal/sequences
+fi
+# if using wayland allow native rendering
+if [[ "$XDG_SESSION_TYPE" == "wayland" ]]; then
+    export MOZ_ENABLE_WAYLAND=1
 fi
 
 # Lines configured by zsh-newuser-install
