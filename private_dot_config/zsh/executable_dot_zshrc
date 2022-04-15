@@ -33,7 +33,7 @@ zsh-syntax-highlighting
 )
 
 newtheme(){
-    sh $XDG_CONFIG_HOME/sway/colors.sh
+    sh $XDG_CONFIG_HOME/sway/colors.sh $1
 }
 
 mountdrives(){
