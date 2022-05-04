@@ -12,8 +12,11 @@ wal -i "$IMAGE"
 cat ~/.cache/wal/sequences
 source ~/.cache/wal/colors-tty.sh
 # update firefox's colors
-pywalfox update    
+pywalfox update
+# update qt5 
+export QT_QPA_PLATFORMTHEME=qt5ct
 # update background with new image 
 killall swaybg 
 swaybg -i "$IMAGE" -m fill &
-echo "Done."
+# print image used to stdout
+chafa "$IMAGE"

@@ -285,6 +285,10 @@ include "$HOME/.cache/wal/colors-sway"
 output HDMI-A-1 pos 1920 0 
 output eDP-1 pos 0 0
 
+# enable xdg-desktop-portal-wlr for pipewire
+exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+
 # screenshot
 set $screenshot 1 All, 2 Current, 3 Region, 4 Region (clipboard)
 mode "$screenshot" {

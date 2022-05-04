@@ -28,7 +28,7 @@ call plug#begin()
     Plug 'dylanaraps/wal.vim'
 call plug#end()
 
-" vim-airline costomization
+" vim-airline costomiazation
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
