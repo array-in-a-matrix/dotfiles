@@ -2,7 +2,8 @@
 
 # Move folders from ~ to their XDG location:
 export ZDOTDIR="$HOME/.config/zsh"
-export ZSH="$HOME/.config/omz"
+#export ZSH="$HOME/.config/omz"
+export ZSH="$HOME/.oh-my-zsh"
 export LESSHISTFILE="$HOME/.config/lesshst"
 export WGETRC="$HOME/.config/wget/wgetrc"
 export PASSWORD_STORE_DIR="$HOME/.local/share/password-store"
@@ -10,12 +11,13 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
-export GIT_CONFIG="$HOME/.config/git/gitconfig"
+#export GIT_CONFIG="$HOME/.config/git/gitconfig"
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
 export NVM_DIR="$HOME/.config/nvm"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc" 
+export PNPM_HOME="/home/linux/.local/share/pnpm"
 export VSCODE_PORTABLE="$XDG_DATA_HOME/vscode"
-export GOPATH="$XDG_DATA_HOME"/go
+export GOPATH="$XDG_DATA_HOME/go"
 
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -27,6 +29,7 @@ export PROJECTS="$HOME/Documents/Projects"
 export PATH=$HOME/Documents/Projects/bin:$PATH
 export PATH=$HOME/home/linux/.local/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
+export PATH="$PNPM_HOME:$PATH"
 #export PATH=$HOME/home/linux/.cargo/bin:$PATH
 
 # Default programs:
