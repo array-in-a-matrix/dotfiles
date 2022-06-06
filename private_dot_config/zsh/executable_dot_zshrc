@@ -54,17 +54,20 @@ mountdrives(){
 source "$XDG_CONFIG_HOME/zsh/icons"
 source "$ZSH/oh-my-zsh.sh"
 
-# Example aliases
-alias py="python3"
+#aliased directories
 alias projects="$HOME/Documents/Projects/"
-alias config="cd $XDG_CONFIG_HOME"
+
+# aliased commands
+alias py="python3"
 alias upgrade="sudo aura -Syu && sudo aura -Akuax"
 alias micon="pactl load-module module-loopback latency_msec=1"
 alias micoff="pactl unload-module module-loopback"
 alias vim="nvim"
 alias ls="lsd"
+alias grep="rg"
 alias rm="trash"
 alias radeontop="radeontop -c"
+alias speedometer="speedometer -l  -r wlo1 -t wlo1 -m $(( 1024 * 1024 * 3 / 2 ))"
 
 # . torsocks on
 
