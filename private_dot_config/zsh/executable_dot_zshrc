@@ -70,7 +70,7 @@ alias radeontop="radeontop -c"
 alias speedometer="speedometer -l  -r wlo1 -t wlo1 -m $(( 1024 * 1024 * 3 / 2 ))"
 alias auth="eval $(ssh-agent) ssh-add ~/.ssh/ubuntu@vector"
 alias pvector="screen mosh ubuntu@arrayinamatrix.xyz --ssh='ssh -p 6969'"
-alias lvector="screen mosh ubuntu@192.168.2.70"
+alias lvector="screen mosh ubuntu@192.168.2.70 --ssh='ssh -p 6969'"
 
 # . torsocks on
 
