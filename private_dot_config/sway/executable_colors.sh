@@ -2,7 +2,7 @@
 # pywal colors
 # if no commandline argument is given, get location of a random image
 if [[ -z $1 ]]; then
-    IMAGE=$(find -L /home/linux/Pictures/Wallpapers/ -type f | shuf -n1)
+    IMAGE=$(find -L $HOME/Pictures/Wallpapers/ -type f | shuf -n1)
 else 
     IMAGE="$1"
 fi
@@ -15,8 +15,10 @@ source ~/.cache/wal/colors-tty.sh
 pywalfox update
 # update qt5 
 export QT_QPA_PLATFORMTHEME=qt5ct
-# update background with new image 
-killall swaybg 
-swaybg -i "$IMAGE" -m fill &
+# update background with new image if swaybg is being used
+if [[ -n $(pgrep swaybg) ]]; then
+    killall swaybg 
+    swaybg -i "$IMAGE" -m fill &
+fi
 # print image used to stdout
 chafa "$IMAGE"
